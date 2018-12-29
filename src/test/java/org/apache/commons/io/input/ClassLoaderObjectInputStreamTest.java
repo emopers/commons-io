@@ -47,6 +47,7 @@ public class ClassLoaderObjectInputStreamTest {
 
         final Object input = Boolean.FALSE;
         oos.writeObject(input);
+        oos.flush();
 
         final InputStream bais = new ByteArrayInputStream(baos.toByteArray());
         final ClassLoaderObjectInputStream clois =
@@ -65,6 +66,7 @@ public class ClassLoaderObjectInputStreamTest {
 
         final Object input = (long) 123;
         oos.writeObject(input);
+        oos.flush();
 
         final InputStream bais = new ByteArrayInputStream(baos.toByteArray());
         final ClassLoaderObjectInputStream clois =
@@ -179,6 +181,7 @@ public class ClassLoaderObjectInputStreamTest {
         final ByteArrayOutputStream baos = new ByteArrayOutputStream();
         final ObjectOutputStream oos = new ObjectOutputStream(baos);
         oos.writeObject(Boolean.FALSE);
+        oos.flush();
         final InputStream bais = new ByteArrayInputStream(baos.toByteArray());
 
         final ClassLoaderObjectInputStream clois =
@@ -195,6 +198,7 @@ public class ClassLoaderObjectInputStreamTest {
         final ByteArrayOutputStream baos = new ByteArrayOutputStream();
         final ObjectOutputStream oos = new ObjectOutputStream(baos);
         oos.writeObject(Boolean.FALSE);
+        oos.flush();
         final InputStream bais = new ByteArrayInputStream(baos.toByteArray());
 
         final ClassLoaderObjectInputStream clois =
